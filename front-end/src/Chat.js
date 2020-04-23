@@ -14,6 +14,7 @@ const Chat = () => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [ scroll, setScroll ] = useState([]);
+    const [ tScroll, setTScroll ] = useState([]);
 
     useEffect(() => {
         const handleNewMessage = (newMessage) => {
@@ -73,9 +74,9 @@ const Chat = () => {
         console.log(totalHeight);
        
 
-        window.onscroll = () => {
+        window.onscroll = (totalHeight) => {
             let progressHeight = (window.pageYOffset / totalHeight) * 100;
-             setScroll ({tamanhoScroll: totalHeight});
+             setScroll (...tScroll, totalHeight);
 
             console.log('scroll inicio');
 
