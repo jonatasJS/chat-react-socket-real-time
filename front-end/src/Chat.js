@@ -88,7 +88,7 @@ const Chat = () => {
        }
 
        s();
-    }, [scroll]);
+    }, [tScroll]); // eslint-disable-next-line
 
     return (
         <main className="container">
